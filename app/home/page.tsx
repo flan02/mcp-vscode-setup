@@ -7,10 +7,10 @@ function HomePage({ }: Props) {
   return (
     <div>
       <h1>Generated with MCP server</h1>
-      <Card
+      {/* <Card
         title="Sample Card"
         imageUrl="/image.jpg"
-      />
+      /> */}
     </div>
   )
 }

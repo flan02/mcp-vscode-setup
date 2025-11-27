@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+}
+
+type ShowsListVotes {
+  rate      Int
+  userEmail String
+}
+
+model aboutmes {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  v         Int      @map("__v")
+  category  String
+  createdAt DateTime @db.Date
+  embedding Float[]
+  text      String
+  updatedAt DateTime @db.Date
+}
+
+model certifications {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  v          Int      @map("__v")
+  createdAt  DateTime @db.Date
+  entorno    String
+  icon       String
+  image      String
+  tecnologia String
+  title      String
+  titulo     String
+  updatedAt  DateTime @db.Date
+}
+
+model projects {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  v         Int?      @map("__v")
+  createdAt DateTime? @db.Date
+  desc_en   String
+  desc_es   String
+  filter    String
+  github    String
+  img       String
+  link      String
+  summary   String
+  title     String
+  titulo    String
+  updatedAt DateTime? @db.Date
+}
+
+model qas {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  v         Int      @map("__v")
+  answer    String
+  createdAt DateTime @db.Date
+  embedding Float[]
+  question  String
+  updatedAt DateTime @db.Date
+}
+
+model shows {
+  id        String           @id @default(auto()) @map("_id") @db.ObjectId
+  chapter   String?
+  duration  String?
+  isMovie   Boolean
+  listVotes ShowsListVotes[]
+  season    String?
+  showId    Int
+  status    String?
+  title     String
+  updatedAt DateTime?        @db.Date
+  urlImage  String
+  voters    Int
+  votes     Int
+  year      String
+}
+
+model users {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  v         Int      @map("__v")
+  createdAt DateTime @db.Date
+  email     String   @unique(map: "email_1")
+  image     String
+  name      String
+  updatedAt DateTime @db.Date
+  watchlist String[]
+}

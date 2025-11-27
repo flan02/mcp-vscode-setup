@@ -74,11 +74,20 @@ export default function Home() {
           <a
             href="#"
             className={`flex h-12 w-full items-center justify-center rounded-md border border-solid px-5 transition-colors md:w-[158px] ${isRetro
-              ? "border-green-400/[.5] text-green-400/[.7] hover:bg-green-900/[.5]"
+              ? "border-green-400/50 text-green-400/70 hover:bg-green-900/50"
               : "border-pink-200 text-pink-500 hover:bg-pink-100 rounded-full"
               }`}
           >
             {isRetro ? "High Scores" : "Gallery"}
+          </a>
+          <a
+            href="/movies"
+            className={`flex h-12 w-full items-center justify-center rounded-md border border-solid px-5 transition-colors md:w-[158px] ${isRetro
+              ? "border-green-400/50 text-green-400/70 hover:bg-green-900/50"
+              : "border-pink-200 text-pink-500 hover:bg-pink-100 rounded-full"
+              }`}
+          >
+            Movies
           </a>
         </div>
       </main>
