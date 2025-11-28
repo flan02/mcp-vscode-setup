@@ -32,7 +32,7 @@ export default function Home() {
         </button>
 
         <Image
-          className={isRetro ? "invert" : ""}
+          className={`${isRetro ? "invert" : ""} w-auto h-auto`}
           src={
             isRetro
               ? "/joystick-8bits.png"
